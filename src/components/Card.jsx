@@ -1,18 +1,18 @@
 import React from "react";
 import { useState } from "react";
 
-const Card = () => {
+const Card = ({ id, image }) => {
   const [flipped, setFlipped] = useState(false);
   const handleClick = () => {
     setFlipped(!flipped);
   };
 
   return (
-    <div className="card">
+    <div className="card" key={id}>
       <div className={flipped ? "flipped" : ""}>
         <img
           className="front"
-          src="https://es.web.img3.acsta.net/pictures/18/10/31/17/34/2348073.jpg"
+          src={image}
           alt="card front"
           onClick={handleClick}
         />
