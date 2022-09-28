@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { shuffle } from "lodash";
+import React from "react";
+
 import { Card } from "./Card";
 
-const Board = ({ data }) => {
-  const [cards, setCards] = useState([]);
-
+const Board = ({ data, optionOne, optionTwo, handleOption, disabled }) => {
   return (
     <div className="board">
       {data.map((card, index) => {
@@ -13,11 +11,13 @@ const Board = ({ data }) => {
         return (
           <Card
             key={index}
-            image={card.image}
+            card={card}
             // estaSiendoComparada={estaSiendoComparada}
             // selecionarCarta={() => props.selecionarCarta(card)}
             // fueAdivinada={card.fueAdivinada}
             flipped={card.flipped}
+            handleOption={() => handleOption(card)}
+            disabled={disabled}
           />
         );
       })}

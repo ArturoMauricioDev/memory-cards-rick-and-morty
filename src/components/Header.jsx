@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ steps }) => {
   return (
     <header>
       <img src="" alt="" />
@@ -8,7 +8,7 @@ const Header = () => {
         <h1>Memory Cards</h1>
         <button>Reiniciar</button>
       </div>
-      <span>Intentos</span>
+      <span>Intentos: {steps}</span>
     </header>
   );
 };

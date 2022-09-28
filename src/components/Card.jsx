@@ -1,14 +1,23 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Card = ({ id, image }) => {
-  const [flipped, setFlipped] = useState(false);
+const Card = ({ card, flipped, handleOption, disabled }) => {
+  const { image } = card;
+  // const [flippedState, setFlippedState] = useState(false);
+
   const handleClick = () => {
-    setFlipped(!flipped);
+    if (!disabled) {
+      handleOption();
+      // setFlippedState(!flippedState);
+    }
   };
 
+  // useEffect(() => {
+  //   setFlippedState(flipped);
+  // }, [flipped]);
+
   return (
-    <div className="card" key={id}>
+    <div className="card">
       <div className={flipped ? "flipped" : ""}>
         <img
           className="front"
