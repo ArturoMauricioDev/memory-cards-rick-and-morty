@@ -23,18 +23,18 @@ function App() {
     );
     response
       .json()
-      .then((response) =>
+      .then((response) => {
         setData(
           shuffle(
-            data
+            []
               .concat(response)
               .concat(response)
               .map((card) => {
                 return { ...card, matched: false, flipped: false };
               })
           )
-        )
-      )
+        );
+      })
       .catch((error) => setError(error));
   };
 
@@ -94,9 +94,25 @@ function App() {
     setOptionTwo(null);
     setDisabled(false);
   };
+
+  useEffect(() => {
+    if (guessedCards === 10) {
+      alert(`Ganaste en ${steps} intentos`);
+    }
+  }, [guessedCards]);
+
+  const reset = () => {
+    fetchCharacter();
+    setOptionOne(null);
+    setOptionTwo(null);
+    setDisabled(false);
+    setGuessedCards(0);
+    setSteps(0);
+  };
+
   return (
     <div className="App">
-      <Header steps={steps} />
+      <Header steps={steps} reset={reset} />
       <Board
         data={data}
         handleOption={handleOption}
