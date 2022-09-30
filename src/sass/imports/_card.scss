@@ -6,6 +6,12 @@
   width: 20vw;
   height: 105px;
   overflow: hidden;
+  @include media(tablet-p-only) {
+    height: 145px;
+  }
+  @include media(desktop-s) {
+    height: 155px;
+  }
   & > div {
     height: 100%;
   }

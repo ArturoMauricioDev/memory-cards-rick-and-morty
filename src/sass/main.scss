@@ -4,6 +4,7 @@ $font-primary: #f7f7f7;
 
 $Fuente1: "Source Code Pro", monospace;
 
+@import "imports/breakpoints";
 @import "imports/app";
 @import "imports/header";
 @import "imports/card";
