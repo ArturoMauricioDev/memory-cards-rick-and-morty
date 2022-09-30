@@ -2,7 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   width: 95vw;
-  max-width: 745px;
+  max-width: 620px;
   margin: 0 auto;
   justify-content: space-around;
+
+  @include media(desktop-s) {
+    max-width: 745px;
+  }
 }

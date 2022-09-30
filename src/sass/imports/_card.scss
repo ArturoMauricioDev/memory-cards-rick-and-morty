@@ -6,6 +6,9 @@
   width: 20vw;
   height: 105px;
   overflow: hidden;
+  @include media(mobile-landscape) {
+    height: 135px;
+  }
   @include media(tablet-p-only) {
     height: 145px;
   }
