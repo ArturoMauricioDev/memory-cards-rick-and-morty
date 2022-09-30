@@ -1,0 +1,14 @@
+.button-section {
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.primary-button {
+  background: $background-button;
+  color: $font-primary;
+  font-weight: 200;
+  border-radius: 6px;
+  height: 2.5rem;
+  width: 98%;
+}

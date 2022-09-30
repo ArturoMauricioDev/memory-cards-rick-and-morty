@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $font-primary;
+  }
+  div span {
+    color: $font-primary;
+    font-weight: 200;
+  }
+}

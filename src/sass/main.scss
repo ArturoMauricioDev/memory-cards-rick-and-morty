@@ -1,2 +1,11 @@
+$background-black: #282828;
+$background-button: linear-gradient(154.79deg, #53565b 1.6%, #262d3d 99.43%);
+$font-primary: #f7f7f7;
+
+$Fuente1: "Source Code Pro", monospace;
+
+@import "imports/app";
+@import "imports/header";
 @import "imports/card";
 @import "imports/board";
+@import "imports/button-section";

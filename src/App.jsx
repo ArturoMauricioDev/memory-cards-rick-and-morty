@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { shuffle } from "lodash";
 import { Header } from "./components/Header";
-import { Card } from "./components/Card";
 import { Board } from "./components/Board";
+import { ButtonSection } from "./components/ButtonSection";
 
 import getRandomNumbers from "./utils/getRandomNumbers";
 
@@ -112,7 +112,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header steps={steps} reset={reset} />
+      <Header steps={steps} />
       <Board
         data={data}
         handleOption={handleOption}
@@ -120,6 +120,7 @@ function App() {
         optionTwo={optionTwo}
         disabled={disabled}
       />
+      <ButtonSection reset={reset} />
     </div>
   );
 }

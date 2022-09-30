@@ -1,14 +1,12 @@
 import React from "react";
 
-const Header = ({ steps, reset }) => {
+const Header = ({ steps }) => {
   return (
     <header>
-      <img src="" alt="" />
+      <h1>Memory Cards</h1>
       <div>
-        <h1>Memory Cards</h1>
-        <button onClick={reset}>Reiniciar</button>
+        <span>Intentos: {steps}</span>
       </div>
-      <span>Intentos: {steps}</span>
     </header>
   );
 };
