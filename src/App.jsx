@@ -3,6 +3,8 @@ import { shuffle } from "lodash";
 import { Header } from "./components/Header";
 import { Board } from "./components/Board";
 import { ButtonSection } from "./components/ButtonSection";
+import { Modal } from "./components/Modal";
+import { Character } from "./components/Character";
 
 import getRandomNumbers from "./utils/getRandomNumbers";
 
@@ -14,6 +16,7 @@ function App() {
   const [disabled, setDisabled] = useState(false);
   const [guessedCards, setGuessedCards] = useState(0);
   const [steps, setSteps] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
   const randomNumbers = getRandomNumbers();
 
@@ -45,7 +48,7 @@ function App() {
   //console.log(data);
 
   const handleOption = (card) => {
-    console.log(card);
+    //console.log(card);
     card.flipped = true;
     optionOne ? setOptionTwo(card) : setOptionOne(card);
   };
@@ -54,20 +57,7 @@ function App() {
     if (optionOne && optionTwo) {
       setDisabled(true);
       setSteps(steps + 1);
-      // if (optionOne === optionTwo) {
-      //   setData((prevCards) => {
-      //     return prevCards.map((card) => {
-      //       if (card.id === optionOne) {
-      //         return { ...card, matched: true };
-      //       } else {
-      //         card;
-      //       }
-      //     });
-      //   });
-      //   resetTurn();
-      // } else {
-      //   setTimeout(() => resetTurn(), 1000);
-      // }
+
       if (optionOne.id === optionTwo.id) {
         setData(
           data.map((card) => {
@@ -78,7 +68,7 @@ function App() {
             return { ...card, matched: true };
           })
         );
-        resetTurn();
+        setOpenModal(true);
       } else {
         setTimeout(() => {
           optionOne.flipped = false;
@@ -121,6 +111,15 @@ function App() {
         disabled={disabled}
       />
       <ButtonSection reset={reset} />
+      {openModal && (
+        <Modal>
+          <Character
+            setOpenModal={setOpenModal}
+            resetTurn={resetTurn}
+            optionOne={optionOne}
+          />
+        </Modal>
+      )}
     </div>
   );
 }
