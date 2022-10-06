@@ -1,0 +1,62 @@
+.profile-container {
+  background: $background-button;
+  border-radius: 15px;
+  border: none;
+  max-width: 460px;
+  height: 235px;
+
+  width: 80vw;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    border-radius: 50%;
+    width: 115px;
+    height: 115px;
+    border: solid 6px $background-black;
+    position: absolute;
+    top: -57px;
+  }
+  > span:nth-child(2) {
+    height: 57px;
+    padding-left: 132px;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+  }
+  > span:nth-child(3) {
+    font-size: 16px;
+    margin: 16px 8px 2px;
+    font-weight: 700;
+  }
+}
+
+.character-info {
+  margin: 0px 8px;
+  padding: 8px 0;
+  border-top: 1px solid $background-black;
+  display: flex;
+  flex-direction: column;
+  div span:nth-child(1) {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 4px;
+  }
+  div span:nth-child(2) {
+    font-size: 16px;
+    font-weight: 200;
+  }
+}
+
+.close-button {
+  position: absolute;
+  right: -4px;
+  top: -8px;
+  color: $close-button;
+}

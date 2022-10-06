@@ -1,7 +1,7 @@
 $background-black: #282828;
 $background-button: linear-gradient(154.79deg, #53565b 1.6%, #262d3d 99.43%);
 $font-primary: #f7f7f7;
-
+$close-button: #f1121294;
 $Fuente1: "Source Code Pro", monospace;
 
 @import "imports/breakpoints";
@@ -11,3 +11,5 @@ $Fuente1: "Source Code Pro", monospace;
 @import "imports/board";
 @import "imports/button-section";
 @import "imports/modal";
+@import "imports/character";
+@import "imports/profile-character";
