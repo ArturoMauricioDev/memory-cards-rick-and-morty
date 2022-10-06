@@ -5,10 +5,13 @@
   max-width: 460px;
   max-height: 235px;
   padding-bottom: 8px;
-  width: 80vw;
+  width: 87vw;
   position: relative;
   display: flex;
   flex-direction: column;
+  @include media(mobile-landscape) {
+    width: 80vw;
+  }
 
   img {
     border-radius: 50%;
@@ -19,7 +22,7 @@
     top: -57px;
   }
   > span:nth-child(2) {
-    height: 57px;
+    height: 64px;
     padding-left: 132px;
     font-size: 22px;
     font-weight: 700;
@@ -38,7 +41,7 @@
 
 .character-info {
   margin: 0px 8px;
-  padding: 8px 0;
+  padding: 12px 0;
   border-top: 1px solid $background-black;
   display: flex;
   flex-direction: column;
